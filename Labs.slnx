@@ -2,5 +2,6 @@
   <Project Path="Laba3.2/Laba3.2.csproj" />
   <Project Path="Laba3.3/Laba3.3.csproj" />
   <Project Path="Laba3.4/Laba3.4.csproj" />
+  <Project Path="laba4/laba4.csproj" Id="7841246e-b8e1-4ccd-b803-c9b08a7bc8d7" />
   <Project Path="Labs/Laba3.csproj" />
 </Solution>
