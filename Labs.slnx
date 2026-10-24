@@ -4,6 +4,7 @@
   <Project Path="Laba3.4/Laba3.4.csproj" />
   <Project Path="Laba4.2/Laba4.2.csproj" Id="d8d8ec97-78ff-403c-b9e7-d767bbcc1d1d" />
   <Project Path="laba4/laba4.csproj" Id="7841246e-b8e1-4ccd-b803-c9b08a7bc8d7" />
+  <Project Path="Laba5/Laba5.csproj" Id="1d1b096f-372c-468c-b521-b190f33e1b88" />
   <Project Path="Labs/Laba3.csproj" />
   <Project Path="Para19.10/Para19.10.csproj" Id="60650ae8-d320-479b-9f9b-a1e224c9d109" />
 </Solution>
