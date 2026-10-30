@@ -5,8 +5,8 @@
   <Project Path="Laba4.2/Laba4.2.csproj" Id="d8d8ec97-78ff-403c-b9e7-d767bbcc1d1d" />
   <Project Path="laba4/laba4.csproj" Id="7841246e-b8e1-4ccd-b803-c9b08a7bc8d7" />
   <Project Path="Laba5.1/Laba5.1.csproj" Id="afb956ba-bad3-4e76-883f-41104e3cb37d" />
+  <Project Path="Laba5.2/Laba5.2.csproj" Id="e1515550-9c5c-4d49-bb74-c7b6fa800388" />
   <Project Path="Laba5/Laba5.csproj" Id="1d1b096f-372c-468c-b521-b190f33e1b88" />
-  <Project Path="Laba6/Laba5.2.csproj" Id="b0d750ec-4f71-47d7-983b-58e24bcc6373" />
   <Project Path="Labs/Laba3.csproj" />
   <Project Path="Para19.10/Para19.10.csproj" Id="60650ae8-d320-479b-9f9b-a1e224c9d109" />
 </Solution>
