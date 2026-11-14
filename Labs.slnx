@@ -1,4 +1,6 @@
 <Solution>
+  <Project Path="distant14.11Laba/distant14.11Laba.csproj" Id="1b0c3546-9e31-49d4-826e-a6a02516344d" />
+  <Project Path="Lab6/Lab6.csproj" Id="502b511f-ddb4-4f47-ba4a-a26476ea7e7e" />
   <Project Path="Laba3.2/Laba3.2.csproj" />
   <Project Path="Laba3.3/Laba3.3.csproj" />
   <Project Path="Laba3.4/Laba3.4.csproj" />
