@@ -1,4 +1,6 @@
-﻿Console.Write("введите количество чисел n: ");
+﻿//18 вариант, сложный уровень//
+
+Console.Write("введите количество чисел n: ");
 int n = int.Parse(Console.ReadLine()!);
 
 int[] mas = new int[n];
