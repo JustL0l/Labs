@@ -12,5 +12,6 @@
   <Project Path="Laba7/Laba7.csproj" Id="dc2d87e8-28f3-418c-8872-324ad81c6e5f" />
   <Project Path="Labs/Laba3.csproj" />
   <Project Path="Para19.10/Para19.10.csproj" Id="60650ae8-d320-479b-9f9b-a1e224c9d109" />
+  <Project Path="Para21.11/Laba8.csproj" Id="5fa5c8c6-ebae-4ac4-b126-4b6d260d22e9" />
   <Project Path="test/test.csproj" Id="ff8613f3-d3d0-4b2c-8b11-733360eb1f17" />
 </Solution>
