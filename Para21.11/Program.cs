@@ -1,51 +1,79 @@
-﻿string[] cabinetNames = { "терапевт", "хирург", "флюорография" };
-int[] cabinetNumbers = { 101, 205, 112 };
-string[] doctors = { "Иванов И.И.", "Петров П.П.", "Сидорова А.А." };
-string[] days = {
-    "понедельник - вторник",
-    "среда - четверг",
-    "пятница - суббота"
-};
-DateTime[] startTimes = {
-    DateTime.Parse("08:00"),
-    DateTime.Parse("09:30"),
-    DateTime.Parse("10:00")
-};
-DateTime[] endTimes = {
-    DateTime.Parse("14:00"),
-    DateTime.Parse("15:30"),
-    DateTime.Parse("16:00")
-};
+using System;
 
-Console.WriteLine("список всех записей");
-for (int i = 0; i < cabinetNames.Length; i++)
+struct Product
 {
-    TimeSpan duration = endTimes[i] - startTimes[i];
-    Console.WriteLine($"кабинет: {cabinetNames[i]} (#{cabinetNumbers[i]}) | врач: {doctors[i]} | день: {days[i]} | время: {startTimes[i]:HH:mm} - {endTimes[i]:HH:mm} | длительность: {duration}");
+    public string Name;           // Наименование
+    public decimal Price;         // Цена
+    public DateTime ManufactureDate; // Дата производства
+    public int ShelfLifeDays;     // Срок годности (в днях)
+    public int Quantity;          // Количество
+    public string Manufacturer;   // Производитель
 }
 
-Console.WriteLine("\nпроверка работы кабинета флюорографии");
-Console.Write("введите день недели: (1-понедельник, 7-воскресенье) ");
-string searchDay = Console.ReadLine();
-
-Console.Write("введите время (чч:мм): ");
-DateTime searchTime = DateTime.Parse(Console.ReadLine());
-
-for (int i = 0; i < cabinetNames.Length; i++)
+class Program
 {
-    if (cabinetNames[i] == "флюорография")
+    static void Main()
     {
-        char startDay = days[i][0];
-        char endDay = days[i].Split(" - ")[1][0];
+        Product[] products = {
+            new Product {
+                Name = "Молоко",
+                Price = 85.50m,
+                ManufactureDate = DateTime.Now.AddDays(-5),
+                ShelfLifeDays = 10,
+                Quantity = 20,
+                Manufacturer = "Молочный завод №1"
+            },
+            new Product {
+                Name = "Хлеб",
+                Price = 45.00m,
+                ManufactureDate = DateTime.Now.AddDays(-6),
+                ShelfLifeDays = 5, // Просрочен (прошло 6 дней при сроке 5)
+                Quantity = 15,
+                Manufacturer = "Хлебокомбинат"
+            },
+            new Product {
+                Name = "Консервы",
+                Price = 150.00m,
+                ManufactureDate = DateTime.Now.AddDays(-30),
+                ShelfLifeDays = 365,
+                Quantity = 50,
+                Manufacturer = "Рыбпром"
+            },
+            new Product {
+                Name = "Йогурт",
+                Price = 60.00m,
+                ManufactureDate = DateTime.Now.AddDays(-20),
+                ShelfLifeDays = 14, // Просрочен (прошло 20 дней при сроке 14)
+                Quantity = 10,
+                Manufacturer = "Данон"
+            }
+        };
 
-        if (searchDay[0] >= startDay && searchDay[0] <= endDay)
+        Console.WriteLine("Список всех товаров:");
+        for (int i = 0; i < products.Length; i++)
         {
-            if (searchTime >= startTimes[i] && searchTime <= endTimes[i])
+            Console.WriteLine($"Товар: {products[i].Name} | Цена: {products[i].Price} руб. | Дата пр-ва: {products[i].ManufactureDate:dd.MM.yyyy} | Срок годности: {products[i].ShelfLifeDays} дн. | Кол-во: {products[i].Quantity} | Производитель: {products[i].Manufacturer}");
+        }
+
+        Console.WriteLine("\nТовары со сроком годности менее 20 дней:");
+        int expiredCount = 0;
+
+        for (int i = 0; i < products.Length; i++)
+        {
+            // 1. Выводим сведения о товарах, срок годности которых менее 20 дней
+            if (products[i].ShelfLifeDays < 20)
             {
-                Console.WriteLine("кабинет флюорографии может принять в это время.");
-                return;
+                Console.WriteLine($"- {products[i].Name} (Срок: {products[i].ShelfLifeDays} дн., Производитель: {products[i].Manufacturer})");
+            }
+
+            // 2. Определяем количество просроченных товаров
+            DateTime expirationDate = products[i].ManufactureDate.AddDays(products[i].ShelfLifeDays);
+            if (DateTime.Now > expirationDate)
+            {
+                expiredCount++; // Или expiredCount += products[i].Quantity, если нужно посчитать штуки
             }
         }
+
+        Console.WriteLine($"\nКоличество просроченных наименований товаров: {expiredCount}");
     }
 }
-Console.WriteLine("кабинет флюорографии не может принять в это время");
